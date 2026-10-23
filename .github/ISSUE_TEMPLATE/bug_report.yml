@@ -1,0 +1,98 @@
+name: Bug report
+description: An installer, hook, sync script, skill, rule, agent, or command does not behave as documented.
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem. This issue is public: do **not** paste secrets, tokens, prompts, private repository names, or unredacted home/project paths.
+        Security issues must be reported privately — see [SECURITY.md](https://github.com/cavaleiro-ai/cavaleiro-agent-harness/blob/main/SECURITY.md).
+        For a short install or runtime report, the "Install or runtime problem" form is enough.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of Cavaleiro Agent Harness is affected?
+      options:
+        - Installer / uninstall / repair (install.sh, install.ps1, scripts/install-*.js, ecc install)
+        - Hooks (hooks/hooks.json, scripts/hooks/)
+        - Codex sync or plugin (scripts/sync-ecc-to-codex.sh, scripts/codex/, .codex-plugin/)
+        - Skills (skills/)
+        - Rules (rules/)
+        - Agents or commands (agents/, commands/)
+        - Another harness adapter (Cursor, OpenCode, Gemini, Qwen, Kimi, Zed, Copilot, ...)
+        - Validators / CI (scripts/ci/, .github/)
+        - Documentation / README / translations
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: file
+    attributes:
+      label: File(s)
+      description: Path(s) of the affected file(s), with line numbers if possible.
+      placeholder: scripts/codex/merge-mcp-config.js:263
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What did you run, and what did the installer, hook, or agent do?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: The exact commands or prompts, in order. A minimal config fixture (redacted) helps a lot.
+      placeholder: |
+        1. printf '[mcp_servers.chrome-devtools]\nenabled = false\n' > config.toml
+        2. node scripts/codex/merge-mcp-config.js config.toml
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: harness
+    attributes:
+      label: Harness
+      options:
+        - Claude Code
+        - Codex
+        - Cursor
+        - OpenCode
+        - GitHub Copilot
+        - Another harness (describe below)
+        - Not applicable (script only)
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS and shell, Node.js version, harness version, and the Cavaleiro Agent Harness commit or release.
+      placeholder: "Windows 11 + PowerShell 5.1, Node 24.15.0, Claude Code 2.1.x, cavaleiro-agent-harness v1.0.0"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant output
+      description: Command output, hook stderr, or `node scripts/ecc.js doctor` output. Redact anything sensitive. This is rendered as code.
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: I removed secrets, tokens, and private data from this report.
+          required: true

@@ -1,0 +1,27 @@
+{
+  "name": "ecc",
+  "displayName": "Cavaleiro Agent Harness",
+  "version": "2.2.3",
+  "description": "Harness-native engineering workflows for Qoder: canonical skills and agents, legacy command shims, a reviewed SessionStart hook, and optional MCP tooling.",
+  "author": {
+    "name": "Cavaleiro AI",
+    "url": "https://github.com/cavaleiro-ai"
+  },
+  "homepage": "https://github.com/cavaleiro-ai/cavaleiro-agent-harness",
+  "repository": "https://github.com/cavaleiro-ai/cavaleiro-agent-harness",
+  "license": "MIT",
+  "keywords": [
+    "qoder",
+    "agents",
+    "skills",
+    "tdd",
+    "code-review",
+    "security",
+    "workflow",
+    "automation"
+  ],
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "mcpServers": "./.mcp.json",
+  "hooks": "./hooks/qoder-hooks.json"
+}

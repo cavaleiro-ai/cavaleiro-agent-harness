@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and setup help
+    url: https://github.com/cavaleiro-ai/cavaleiro-agent-harness/discussions
+    about: Ask a public question or get help from the community.
+  - name: Private security report
+    url: https://github.com/cavaleiro-ai/cavaleiro-agent-harness/security/advisories/new
+    about: Report vulnerabilities privately. Do not put secrets in a public issue.
+  - name: Read the contributing guide
+    url: https://github.com/cavaleiro-ai/cavaleiro-agent-harness/blob/main/CONTRIBUTING.md
+    about: How to propose changes, run the validators and tests, and keep identifiers stable.

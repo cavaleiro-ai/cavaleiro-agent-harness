@@ -1,0 +1,46 @@
+{
+  "name": "ecc",
+  "version": "2.2.3",
+  "description": "Harness-native Cavaleiro Agent Harness plugin for engineering teams - 71 agents, 311 skills, 97 legacy command shims, reusable hooks, rules, MCP conventions, and operator workflows for Claude Code plus adjacent agent harnesses",
+  "author": {
+    "name": "Cavaleiro AI",
+    "url": "https://github.com/cavaleiro-ai"
+  },
+  "homepage": "https://github.com/cavaleiro-ai/cavaleiro-agent-harness",
+  "repository": "https://github.com/cavaleiro-ai/cavaleiro-agent-harness",
+  "license": "MIT",
+  "keywords": [
+    "claude-code",
+    "agents",
+    "skills",
+    "hooks",
+    "rules",
+    "tdd",
+    "code-review",
+    "security",
+    "workflow",
+    "automation",
+    "best-practices"
+  ],
+  "userConfig": {
+    "hooks_enabled": {
+      "type": "boolean",
+      "title": "Enable Cavaleiro Agent Harness hooks",
+      "description": "Run Cavaleiro Agent Harness's local lifecycle, quality, and safety automation. Disable this to keep skills and commands without local hook automation.",
+      "default": true
+    },
+    "hook_profile": {
+      "type": "string",
+      "title": "Cavaleiro Agent Harness hook profile",
+      "description": "Choose minimal, standard, or strict. Invalid values safely fall back to standard.",
+      "default": "standard"
+    }
+  },
+  "mcpServers": {},
+  "skills": [
+    "./skills/"
+  ],
+  "commands": [
+    "./commands/"
+  ]
+}
